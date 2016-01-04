@@ -1,0 +1,13 @@
+{application, hemma,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel
+                  ,stdlib
+%                  ,yaws
+                 ]},
+  {mod, { hemma_app, []}},
+  {env, []}
+ ]}.
