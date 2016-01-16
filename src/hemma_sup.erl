@@ -23,6 +23,14 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-    Server = ?CHILD(hemma_srv, worker),
-    {ok, { {one_for_one, 5, 10}, []} }.
+    HemmaServer = ?CHILD(hemma_srv, worker),
+    HemmaYawsServer = ?CHILD(hemma_yaws_server, worker),
+
+    {ok, { {one_for_one, 5, 10},
+           [
+            HemmaServer
+            ,HemmaYawsServer
+           ]
+         }
+    }.
 
