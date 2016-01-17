@@ -1,0 +1,3 @@
+% -*- erlang -*-
+application:start(sasl),
+application:start(hemma).
