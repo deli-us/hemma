@@ -102,15 +102,15 @@ handle_info(init, State) ->
     io:format("~p:init= ~n", [?MODULE]),
 
     Id = "my_server",
-    GconfList = [{logdir, "/var/log"},
-                 {ebin_dir, ["/example1/ebin", "/example2/ebin"]},
+    GconfList = [{logdir, "logs"},
+                 {ebin_dir, ["ebin"]},
                  {id, Id}],
 
     Docroot = docroot(),
     SconfList = [{docroot, Docroot},
                  {port, 8080},
                  {listen, {127,0,0,1}},
-                 {appmods, [{"/", my_appmod}]}],
+                 {appmods, [{"/", hemma_appmod}]}],
     {ok, SCList, GC, ChildSpecs} =
         yaws_api:embedded_start_conf(Docroot, SconfList, GconfList, Id),
 
