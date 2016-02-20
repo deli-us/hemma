@@ -1,0 +1,38 @@
+<erl>
+
+
+out(A) ->
+    [
+     {ehtml,
+      [{'div', [{id, "entry"}],
+        [{h1,[],"Yaws"},
+
+
+        {p,[],"Yaws is a HTTP high perfomance 1.1 webserver particularly"
+         " well suited for dynamic-content web applications. Two
+         separate modes of operations are supported:"},
+        {ul,[],
+         [{li,[],
+           {p,[],"Standalone mode where Yaws runs as a regular webserver "
+            "daemon. This is the default mode."}},
+          {li,[],
+           {p,[], "Embedded mode where Yaws runs as an embedded webserver in "
+            "another Erlang application."}}
+         ]},
+        {p,[], ["Yaws is entirely written in ",
+                {a, [{href, "http://www.erlang.org"}],  "Erlang"},
+                ", and furthermore it is a multithreaded webserver where one "
+                "Erlang lightweight process is used to handle each client."]},
+        {p,[], "The main advantages of Yaws compared to other Web technologies"
+         " are performance and elegance. The performance comes from the "
+         " underlying Erlang system and its ability to handle concurrent "
+         " processes in an efficent way. Its elegance comes from Erlang as "
+         "well. Web applications don't have to be written in ugly ad hoc "
+         "h2."}
+
+        ]}]}].
+
+</erl>
+
+
+
