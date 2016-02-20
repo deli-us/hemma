@@ -110,7 +110,7 @@ handle_info(init, State) ->
     SconfList = [{docroot, Docroot},
                  {port, 8080},
                  {listen, {127,0,0,1}},
-                 {appmods, [{"/", hemma_appmod}]}],
+                 {appmods, [{"/appmod", hemma_appmod}]}],
     {ok, SCList, GC, ChildSpecs} =
         yaws_api:embedded_start_conf(Docroot, SconfList, GconfList, Id),
 
